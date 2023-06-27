@@ -1,0 +1,47 @@
+.container{
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vh;
+}
+
+.container>img{
+    width: 20%;
+    height: 20%;
+    border: 1px solid;
+}
+img.active {
+    display: inline-block;
+    position: relative;
+    border: 2px solid greenyellow;
+}
+.popUp {
+    position: absolute;
+    transform: translateX(10px);
+    width: 40%;
+    border: 1px solid red;
+}
+
+.popUp img{
+    display: inline-block;
+    flex-direction: row;
+    padding: 0px;
+    width: 100px;
+    height: 100px;
+}
+
+.popUp.removed{
+    display: none;
+}
+span.close{
+    float: right;
+}
+button{
+    float:right ;
+}
+span{
+    top: 0%;
+}
+

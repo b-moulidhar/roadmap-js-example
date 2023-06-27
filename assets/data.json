@@ -1,0 +1,172 @@
+{
+    "data":[
+        {
+        "image":"./assets/images/Valve-Throttle.png",
+        "id":"Husqvarna 530035101",
+        "name":"Valve Throttle",
+        "price":2300,
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Screw-Throttle-valve.png",
+        "id":"Husqvarna 530035102",
+        "name":"Screw-Throttle-Valve",
+        "price":500,
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Idle-Speed-Screw.png",
+        "id":"Husqvarna 530035103",
+        "name":"Idle Speed Screw",
+        "price":400,
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Spring-Throttle-Return.png",
+        "id":"Husqvarna 530035104",
+        "name":"Spring-Throttle Return",
+        "price":150,
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Spring-High-Speed-Mixture-Needle.png",
+        "id":"Husqvarna 530035105",
+        "name":"Spring-High Speed Mixture Needle",
+        "price":100,
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Needle-High-Speed-Mixture.png",
+        "id":"Husqvarna 530035106",
+        "name":"Needle-High Speed Mixture",
+        "price":1000,
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Plug-Dia-Welch.png",
+        "id":"Husqvarna 530035107",
+        "name":"Plug-5/16 Dia. Welch",
+        "price":850,
+        "availability":false
+    },
+        {
+        "image":"./assets/images/Screw-Pump-Cover.png",
+        "id":"Husqvarna 530035108",
+        "name":"Screw-Pump Cover",
+        "price":650,
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Cover-Fuel-Pump.png",
+        "id":"Husqvarna 530035109",
+        "name":"Cover-Fuel Pump",
+        "price":1000,
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Gasket-Fuel-Pump.png",
+        "id":"Husqvarna 530035110",
+        "name":"Gasket-Fuel Pump",
+        "price":50,
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Diaphragm-Fuel-Pump.png",
+        "id":"Husqvarna 530035111",
+        "name":"Diaphragm-Fuel Pump",
+        "price":4000,
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Screen-Fuel-Inlet.png",
+        "id":"Husqvarna 530035112",
+        "name":"Screen-Fuel Inlet",
+        "price":150,
+        "availability":false
+    },
+        {
+        "image":"./assets/images/Ring-Throttle-Retainer.png",
+        "id":"Husqvarna 530035113",
+        "name":"Ring-Throttle Retainer",
+        "price":100,
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Valve-Inlet-Needle.png",
+        "id":"Husqvarna 530035114",
+        "name":"Valve-Inlet Needle",
+        "price":180,
+        "availability":false
+    },
+        {
+        "image":"./assets/images/Spring-Metering-Lever.png",
+        "id":"Husqvarna 530035115",
+        "name":"Spring-Metering Lever",
+        "price":50,
+        "availability":true
+    },
+        {
+        "image":"./assets/images/clutch-wires.png",
+        "id":"Husqvarna 530035116",
+        "name":"clutch wires",
+        "price":300,
+        "availability":false
+    },
+        {
+        "image":"./assets/images/Lever-Metering.png",
+        "id":"Husqvarna 530035117",
+        "name":"Lever-Metering",
+        "price":150,
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Pin-Metering-Lever.png",
+        "id":"Husqvarna 530035118",
+        "name":"Pin-Metering Lever",
+        "price":80,
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Screw-Metering-Lever-Pin.png",
+        "id":"Husqvarna 530035119",
+        "name":"Screw-Metering Lever Pin",
+        "price":50,
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Gasket-Metering-Diaphragm.png",
+        "id":"Husqvarna 530035120",
+        "name":"Gasket-Metering Diaphragm",
+        "price":100,
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Diaphragm-Metering.png",
+        "id":"Husqvarna 530035121",
+        "name":"Diaphragm-Metering",
+        "price":1990,
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Screw-Metering-Cover.png",
+        "id":"Husqvarna 530035122",
+        "name":"Screw Metering Cover",
+        "price":240,
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Kit-Carb-Kwik-Repair.png",
+        "id":"Husqvarna 530035123",
+        "name":"Kit-Carb Kwik Repair",
+        "price":2500,
+        "availability":true
+    },
+    {
+        "image":"./assets/images/Kit-Carb-Gasket-Diaphragm.png",
+        "id":"Husqvarna 530035124",
+        "name":"Kit-Carb Gasket/Diaphragm",
+        "price":1500,
+        "availability":true
+    }
+]
+}
