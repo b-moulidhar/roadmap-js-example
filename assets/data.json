@@ -167,6 +167,13 @@
         "name":"Kit-Carb Gasket/Diaphragm",
         "price":1500,
         "availability":true
+    },
+    {
+        "image":"./assets/images/Kit-Carb-Gasket-Diaphragm.png",
+        "id":"Husqvarna 530035124",
+        "name":"Kit-Carb Gasket/Diaphragm",
+        "price":1500,
+        "availability":true
     }
 ]
 }

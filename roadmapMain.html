@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>RoadMap</title>
+    <link rel="stylesheet" href="./css/RoadMapStyle.css">
+    <title>RoadMap Main</title>
 </head>
 <body>
     <div class="container">
-        <!-- <img width="10%" height="10%" src="./assets/images/Screw-Pump Cover.png" alt="Screw-Pump cover">
-        <img width="10%" height="10%" src="./assets/images/Valve Throttle.png" alt="Valve Throttle">
-        <img width="10%" height="10%" src="./assets/images/Screw-Pump Cover.png" alt="Screw-Pump cover"> -->
+        <img src="./assets/images/RoadmapMain.png" alt="RoadMap Main">
     </div>
     <script>
         function removeActiveClass(){
-            let imgs = document.querySelectorAll('img');
+            let imgs = document.querySelectorAll('div');
             imgs.forEach((tags)=>{
                 tags.classList.remove('active');
             })
@@ -93,16 +91,13 @@
             if (data !== undefined) {
                 let container = document.querySelector(".container");
 
-                data.forEach(item => {
-                    let img = document.createElement("img");
-                    img.width = "50%";
-                    img.height = "50%";
-                    img.src = item.image;
-                    img.id = item.id;
-                    img.alt = item.name;
-                    
-                    img.addEventListener("click", showData);
-                    container.appendChild(img);
+                data.forEach((item,idx) => {
+                    let clickable = document.createElement("div");
+                    clickable.className="clickable"+" "+"click"+idx
+                    clickable.id = item.id;
+                    clickable.alt = item.name;
+                    container.appendChild(clickable);
+                    clickable.addEventListener("click", showData);
                 });
             }
         }
