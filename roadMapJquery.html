@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Click on Image Example</title>
+  <style>
+    #imageContainer {
+      position: relative;
+      width: 500px;
+      height: 300px;
+    }
+    #myImage{
+        height: 150px;
+        width: 150px;
+    }
+  </style>
+</head>
+<body>
+    <div id="imageContainer">
+      <img id="myImage" src="./assets/images/Cover-Fuel-Pump.png" alt="My Image">
+    
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="jquery.ui.touch-punch.min.js"></script>
+  <script>
+    $(document).ready(function() {
+        $("#myImage").draggable();
+      $("#imageOverlay").on("click", function(event) {
+        var containerOffset = $("#imageContainer").offset();
+        var clickX = event.pageX - containerOffset.left;
+        var clickY = event.pageY - containerOffset.top;
+        console.log("Clicked coordinates - X: " + clickX + ", Y: " + clickY);
+      });
+    });
+  </script>
+</body>
+</html>

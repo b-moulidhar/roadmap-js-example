@@ -1,0 +1,90 @@
+.container>img{
+    /* position: relative; */
+    width: 100%;
+    height: 100%;
+}
+.image{
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+}
+.hotspot{
+    position: absolute;
+    border: 0.5px solid;
+    width: 3%;
+    height: 3%;
+    border-radius: 50%;  
+}
+.container{
+    border:1px solid;
+    box-shadow: 1px 3px 25px 0px rgba(0,0,0,0.75);
+    position: relative;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 90vh;
+}
+div.active {
+    border: 2px solid greenyellow;
+}
+.popUp {
+    position: absolute;
+    transform: translateX(10px);
+    width: 40%;
+    border: 1px solid red;
+    height: 150px;
+    background-color: grey;
+}
+
+.popUp>img{
+    position: relative;
+    display: inline-block;
+    flex-direction: row;
+    padding: 0px;
+    height: 85%;
+    width: 35%;
+}
+
+.popUp.removed{
+    display: none;
+}
+#itemName{
+    position: absolute;
+    top: 40%;
+    left: 37%;
+    
+}
+#itemId{
+    position: absolute;
+    top: 20%;
+    left: 37%;
+   
+}
+#itemPrice{
+    position: absolute;
+    left: 10%;
+    top: 85%;
+    float: inherit;
+}
+span.close{
+    margin: 2%;
+    float: right;
+    
+}
+span.close:hover{
+    cursor: pointer;
+}
+button{
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    float: inherit;
+}
+span{
+    top: 0%;
+}
