@@ -10,6 +10,36 @@ $(document).ready(() => {
     return cleanedUrl;
   }
 
+  $("#toggleFullScreen").click(function() {
+    toggleFullScreen();
+});
+
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        // Request full screen
+        if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+        } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+            document.documentElement.mozRequestFullScreen();
+        } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            document.documentElement.webkitRequestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+            document.documentElement.msRequestFullscreen();
+        }
+    } else {
+        // Exit full screen
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) { // Firefox
+            document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { // IE/Edge
+            document.msExitFullscreen();
+        }
+    }
+}
+
   function zoomable(){
     $('.container').on('mousewheel', function(event) {
         event.preventDefault();
@@ -90,7 +120,7 @@ var data;
           }
           if(top>650 && left<550){
             left=left-width
-            top= top - (top/3 - height);
+            top= (top+height) - (top/4);
           }
         newDiv.css({
           'padding': '10px',
