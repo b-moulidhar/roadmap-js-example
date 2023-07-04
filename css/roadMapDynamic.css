@@ -17,6 +17,10 @@
     height: 3%;
     border-radius: 50%;  
 }
+.hotspot:hover{
+    cursor: pointer;
+    border: 1px solid greenyellow
+}
 .container{
     border:1px solid;
     box-shadow: 1px 3px 25px 0px rgba(0,0,0,0.75);
@@ -35,10 +39,12 @@ div.active {
 .popUp {
     position: absolute;
     transform: translateX(10px);
-    width: 40%;
-    border: 1px solid red;
-    height: 150px;
-    background-color: grey;
+    width: 28%;
+    border: 1px solid black;
+    height: 15%;
+    background-color: #adb5bd;
+    top: 0;
+    font-size: large;
 }
 
 .popUp>img{
@@ -47,7 +53,14 @@ div.active {
     flex-direction: row;
     padding: 0px;
     height: 85%;
-    width: 35%;
+    width: 33%;
+}
+#ref{
+    position: absolute;
+    top: 4px;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 1;
 }
 
 .popUp.removed{
@@ -56,30 +69,32 @@ div.active {
 #itemName{
     position: absolute;
     top: 40%;
-    left: 37%;
+    left: 40%;
     
 }
 #itemId{
     position: absolute;
-    top: 20%;
-    left: 37%;
-   
+    top: 21%;
+    left: 40%;  
 }
 #itemPrice{
     position: absolute;
-    left: 10%;
-    top: 85%;
+    left: 8%;
+    top: 83%;
     float: inherit;
 }
 span.close{
-    margin: 2%;
+    margin: 0;
     float: right;
+    font-size: large;
+    font-weight: bold;
     
 }
 span.close:hover{
     cursor: pointer;
 }
-button{
+.popUp>button{
+    background-color: aquamarine;
     position: absolute;
     right: 5%;
     bottom: 5%;
@@ -87,4 +102,73 @@ button{
 }
 span{
     top: 0%;
+}
+@media (width>1400px){
+    .popUp {
+        position: absolute;
+        transform: translateX(10px);
+        width: 25%;
+        border: 1px solid red;
+        height: 15%;
+        background-color: #adb5bd;
+        top: 0;
+    }
+}
+
+@media(max-width:450px){
+    .popUp {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        transform: translateX(10px);
+        width: 30%;
+        border: 1px solid black;
+        height: 20%;
+        background-color: #adb5bd;
+        top: 0;
+        font-size: 10px;
+    }
+    .popUp>img{
+        position: relative;
+        display: inline-block;
+        flex-direction: row;
+        padding: 0px;
+        height: 33%;
+        width: 85%;
+    }
+    #ref{
+        position: absolute;
+        top: 0;
+        left: 2px;
+        float: left;
+        font-size: 11px;
+        font-weight: bold;
+    }
+    
+    .popUp.removed{
+        display: none;
+    }
+    #itemName{
+        position: absolute;
+        top: 60%;
+        left: 5%;
+        
+    }
+    #itemId{
+        position: absolute;
+        top: 48%;
+        left: 5%;  
+    }
+    #itemPrice{
+        position: absolute;
+        left: 25%;
+        top: 37%;
+        float: inherit;
+    }
+    span.close{
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 12px;      
+    }
 }

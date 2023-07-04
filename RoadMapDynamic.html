@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
     <script src="jquery.ui.touch-punch.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tesseract.js"></script>
     <link rel="stylesheet" href="./css/roadMapDynamic.css">
@@ -49,49 +49,7 @@
     
 
 
-    <script>
-       $(document).ready(() => {
-        $(".container").draggable({
-            containment: ".ui-draggable"
-        });
-        var data;
-        function hotSpot(){
-            $(".hotspots").click((event) => {
-                $(".hotspot").removeClass("active");
-                let targetDiv = event.target
-            var ref = targetDiv.getAttribute("reference");
-                $(targetDiv).addClass("active")
-            
-            var item = data.find((i) => i.reference === ref);
-            console.log(item);
-          });
-        }
-        function popUp(){
-            
-        }
-  try {
-
-   
-    $.ajax({
-      url: "./assets/data.json",
-      type: "GET",
-      success: (response) => {
-        data = response.data;
-        if (data !== undefined) {
-          // Continue with the logic here
-         hotSpot()
-        }
-      },
-      error: (error) => {
-        console.error("Error loading JSON:", error);
-      }
-    });
-  } catch (error) {
-    console.error("An error occurred:", error);
-  }
-});
-
-    </script>
+    <script src="./js/RoadMapDynamic.js"></script>
 
 
 
