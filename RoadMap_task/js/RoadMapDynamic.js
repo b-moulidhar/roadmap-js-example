@@ -2,8 +2,8 @@ $(document).ready(() => {
     $(".container").draggable({
     });
   function urlName(){
-    // let windowGieght = window.screen.width;
-    // console.log(windowGieght);
+    let windowGieght = window.screen.width;
+    console.log(windowGieght);
     let  url = window.location.pathname;
     var regex = /\/(\w+)\.html$/;
     var match = url.match(regex);

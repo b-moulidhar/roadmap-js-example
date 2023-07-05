@@ -1,0 +1,61 @@
+{
+    "data":[
+        {
+        "image":"./assets/images/Valve-Throttle.png",
+        "id":"Husqvarna 530035101",
+        "name":"Valve Throttle",
+        "price":2300,
+        "reference":"1",
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Screw-Throttle-valve.png",
+        "id":"Husqvarna 530035102",
+        "name":"Screw-Throttle-Valve",
+        "price":500,
+        "reference":"2",
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Idle-Speed-Screw.png",
+        "id":"Husqvarna 530035103",
+        "name":"Idle Speed Screw",
+        "price":400,
+        "reference":"3",
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Spring-Throttle-Return.png",
+        "id":"Husqvarna 530035104",
+        "name":"Spring-Throttle Return",
+        "price":150,
+        "reference":"4",
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Spring-High-Speed-Mixture-Needle.png",
+        "id":"Husqvarna 530035105",
+        "name":"Spring-High Speed Mixture Needle",
+        "price":100,
+        "reference":"5",
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Needle-High-Speed-Mixture.png",
+        "id":"Husqvarna 530035106",
+        "name":"Needle-High Speed Mixture",
+        "price":1000,
+        "reference":"6",
+        "availability":true
+    },
+        {
+        "image":"./assets/images/Needle-High-Speed-Mixture.png",
+        "id":"Husqvarna 530035106",
+        "name":"Needle-High Speed Mixture",
+        "price":1000,
+        "reference":"A",
+        "availability":true
+    }
+       
+]
+}
