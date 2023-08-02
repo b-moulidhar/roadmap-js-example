@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ /* Style the custom dropdown container */
+/* Style the custom dropdown container */
+.custom-dropdown {
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Style the selected option */
+.selected-option {
+  padding: 10px;
+}
+
+/* Style the options container */
+.options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  background-color: #fff;
+  max-height: 150px;
+  overflow-y: auto;
+  /* Hide options by default */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+/* Show options when the .show class is applied */
+.options.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Style the individual options */
+.options li {
+  padding: 8px 10px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+/* Apply different background to the selected option */
+.options li.selected {
+  background-color: #007bff;
+  color: #fff;
+}
+
+    </style>
+</head>
+<body>
+    <div class="custom-dropdown">
+        <div class="selected-option">Select an option</div>
+        <ul class="options">
+          <li>Option 1</li>
+          <li>Option 2</li>
+          <li>Option 3</li>
+        </ul>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+  const dropdown = document.querySelector('.custom-dropdown');
+  const optionsList = dropdown.querySelector('.options');
+  const options = optionsList.querySelectorAll('li');
+
+  // Toggle options visibility when the dropdown is clicked
+  dropdown.addEventListener('click', function () {
+    optionsList.classList.toggle('show');
+  });
+
+  // Handle option selection
+  options.forEach(function (option) {
+      option.addEventListener('click', function () {
+        optionsList.classList.toggle('hide');
+      dropdown.querySelector('.selected-option').textContent = option.textContent;
+    });
+  });
+});
+
+      </script>
+      
+</body>
+</html>

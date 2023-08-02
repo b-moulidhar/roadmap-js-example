@@ -147,7 +147,21 @@ var data;
  
 
     }
-    function hotSpot(){
+    function hotSpot(data){
+      data.forEach(item => {
+        console.log(item)
+        $(".hotspots").append(`</div><div class="hotspot" type="hotspot" reference=${item.reference} style="left: ${item.left}%; top:${item.top}%;">`)
+        // let clickable = document.createElement("div");
+        //   clickable.addClass("hotspot");
+        //   clickable.attr("reference",item.reference);
+        //   clickable.attr("id",item.id);
+        //   clickable.attr("alt",item.name);
+        //   clickable.css({
+        //     'top':item.top+'px',
+        //     'left':item.left+'px'
+        //   });
+        //   container.appendChild(clickable);
+      });
         $(".hotspots").click((event) => {
             $(".hotspot").removeClass("active");
             let targetDiv = event.target
@@ -171,7 +185,7 @@ $.ajax({
     data = response.data;
     if (data !== undefined) {
       // Continue with the logic here
-     hotSpot();
+     hotSpot(data);
      zoomable();
     }
   },

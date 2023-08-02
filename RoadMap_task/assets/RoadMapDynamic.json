@@ -6,7 +6,9 @@
         "name":"Valve Throttle",
         "price":2300,
         "reference":"1",
-        "availability":true
+        "availability":true,
+        "left":13.621212121212,
+        "top":34.27693201627
     },
         {
         "image":"./assets/images/Screw-Throttle-valve.png",
@@ -14,7 +16,9 @@
         "name":"Screw-Throttle-Valve",
         "price":500,
         "reference":"2",
-        "availability":true
+        "availability":true,
+        "left":13.166666666667,
+        "top":38.651074956421
     },
         {
         "image":"./assets/images/Idle-Speed-Screw.png",
@@ -22,7 +26,9 @@
         "name":"Idle Speed Screw",
         "price":400,
         "reference":"4",
-        "availability":true
+        "availability":true,
+        "left":13.363636363636,
+        "top":16.587100522952
     },
         {
         "image":"./assets/images/Spring-Throttle-Return.png",
@@ -30,7 +36,9 @@
         "name":"Spring-Throttle Return",
         "price":150,
         "reference":"5",
-        "availability":true
+        "availability":true,
+        "left":27.409090909091,
+        "top":46.304822777455
     },
         {
         "image":"./assets/images/Spring-High-Speed-Mixture-Needle.png",
@@ -38,7 +46,9 @@
         "name":"Spring-High Speed Mixture Needle",
         "price":100,
         "reference":"7",
-        "availability":true
+        "availability":true,
+        "left":27.636363636364,
+        "top":56.415223707147
     },
         {
         "image":"./assets/images/Needle-High-Speed-Mixture.png",
@@ -46,7 +56,9 @@
         "name":"Needle-High Speed Mixture",
         "price":1000,
         "reference":"8",
-        "availability":true
+        "availability":true,
+        "left":17.739393939394,
+        "top":57.344915746659
     },
         {
         "image":"./assets/images/Plug-Dia-Welch.png",
@@ -54,7 +66,9 @@
         "name":"Plug-5/16 Dia. Welch",
         "price":850,
         "reference":"9",
-        "availability":false
+        "availability":false,
+        "left":28.242424242424,
+        "top":60.075886112725
     },
         {
         "image":"./assets/images/Screw-Pump-Cover.png",
@@ -62,7 +76,9 @@
         "name":"Screw-Pump Cover",
         "price":650,
         "reference":"11",
-        "availability":true
+        "availability":true,
+        "left":26.878787878788,
+        "top":4.1133062173155
     },
         {
         "image":"./assets/images/Cover-Fuel-Pump.png",
@@ -70,7 +86,9 @@
         "name":"Cover-Fuel Pump",
         "price":1000,
         "reference":"12",
-        "availability":true
+        "availability":true,
+        "left":26.575757575758,
+        "top":9.623881464265
     },
         {
         "image":"./assets/images/Gasket-Fuel-Pump.png",
@@ -78,7 +96,9 @@
         "name":"Gasket-Fuel Pump",
         "price":50,
          "reference":"13",
-         "availability":true
+         "availability":true,
+         "left":50.439393939394,
+        "top":22.439570017432
     },
         {
         "image":"./assets/images/Diaphragm-Fuel-Pump.png",
@@ -86,7 +106,9 @@
         "name":"Diaphragm-Fuel Pump",
         "price":4000,
         "reference":"14",
-        "availability":true
+        "availability":true,
+        "left":52.636363636364,
+        "top":29.454154561302
     },
         {
         "image":"./assets/images/Screen-Fuel-Inlet.png",
@@ -94,7 +116,9 @@
         "name":"Screen-Fuel Inlet",
         "price":150,
         "reference":"15",
-        "availability":false
+        "availability":false,
+        "left":51.121212121212,
+        "top":33.05671121441
     },
         {
         "image":"./assets/images/Ring-Throttle-Retainer.png",
@@ -102,7 +126,9 @@
         "name":"Ring-Throttle Retainer",
         "price":100,
         "reference":"18",
-        "availability":true
+        "availability":true,
+        "left":57.409090909091,
+        "top":41.0753050552
     },
         {
         "image":"./assets/images/Valve-Inlet-Needle.png",
@@ -110,7 +136,9 @@
         "name":"Valve-Inlet Needle",
         "price":180,
         "reference":"19",
-        "availability":false
+        "availability":false,
+        "left":57.560606060606,
+        "top":50.330331202789
     },
         {
         "image":"./assets/images/Spring-Metering-Lever.png",
@@ -118,7 +146,9 @@
         "name":"Spring-Metering Lever",
         "price":50,
          "reference":"20",
-         "availability":true
+         "availability":true,
+         "left":57.339393939394,
+        "top":53.926147588611
     },
         {
         "image":"./assets/images/clutch-wires.png",
@@ -126,7 +156,9 @@
         "name":"clutch wires",
         "price":300,
         "reference":"21",
-        "availability":false
+        "availability":false,
+        "left":57.387878787879,
+        "top":58.565136548518
     },
         {
         "image":"./assets/images/Lever-Metering.png",
@@ -134,7 +166,9 @@
         "name":"Lever-Metering",
         "price":150,
         "reference":"22",
-        "availability":true
+        "availability":true,
+        "left":56.045454545455,
+        "top":64.433817547937
     },
         {
         "image":"./assets/images/Pin-Metering-Lever.png",
@@ -142,7 +176,9 @@
         "name":"Pin-Metering Lever",
         "price":80,
          "reference":"23",
-         "availability":true
+         "availability":true,
+         "left":57.512121212121,
+        "top":67.662056943637
     },
         {
         "image":"./assets/images/Screw-Metering-Lever-Pin.png",
@@ -150,7 +186,9 @@
         "name":"Screw-Metering Lever Pin",
         "price":50,
         "reference":"24",
-        "availability":true
+        "availability":true,
+        "left":56.045454545455,
+        "top":71.380825101685
     },
         {
         "image":"./assets/images/Gasket-Metering-Diaphragm.png",
@@ -158,7 +196,9 @@
         "name":"Gasket-Metering Diaphragm",
         "price":100,
         "reference":"25",
-        "availability":true
+        "availability":true,
+        "left":56.045454545455,
+        "top":74.676641487507
     },
         {
         "image":"./assets/images/Diaphragm-Metering.png",
@@ -166,7 +206,9 @@
         "name":"Diaphragm-Metering",
         "price":1990,
         "reference":"26",
-        "availability":true
+        "availability":true,
+        "left":57.590909090909,
+        "top":80.471005229518
     },
         {
         "image":"./assets/images/Screw-Metering-Cover.png",
@@ -174,7 +216,9 @@
         "name":"Screw Metering Cover",
         "price":240,
         "reference":"27",
-        "availability":true
+        "availability":true,
+        "left":58.90303030303,
+        "top":85.251888436955
     },
         {
         "image":"./assets/images/Kit-Carb-Kwik-Repair.png",
@@ -182,7 +226,9 @@
         "name":"Kit-Carb Kwik Repair",
         "price":2500,
         "reference":"28",
-        "availability":true
+        "availability":true,
+        "left":11.275757575758,
+        "top":76.013073794306
     },
     {
         "image":"./assets/images/Kit-Carb-Gasket-Diaphragm.png",
@@ -190,7 +236,9 @@
         "name":"Kit-Carb Gasket/Diaphragm",
         "price":1500,
         "reference":"29",
-        "availability":true
+        "availability":true,
+        "left":9.909090909091,
+        "top":94.581231841952
     },
     {
         "image":"./assets/images/Kit-Carb-Gasket-Diaphragm.png",
@@ -198,7 +246,9 @@
         "name":"Kit-Carb Gasket/Diaphragm",
         "price":1500,
         "reference":"3",
-        "availability":true
+        "availability":true,
+        "left":13.363636363636,
+        "top":46.537245787333
     }
 ]
 }

@@ -129,10 +129,8 @@ var data;
                left=left-width
                top= (top+height) - (top/4);
              }
-
-
           }
-        newDiv.css({
+        newDiv.css({  
           'padding': '10px',
           'border': '1px solid black',
           // 'width':'20px',

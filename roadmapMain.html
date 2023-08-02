@@ -76,10 +76,11 @@
         var data;
 
         function init() {
-            fetch("./assets/data.json")
+            fetch("./assets/RoadMapDynamic.json")
                 .then(response => response.json())
                 .then(jsonData => {
                     data = jsonData.data;
+                    console.log(data)
                     populateImages();
                 })
                 .catch(error => {
@@ -96,6 +97,8 @@
                     clickable.className="clickable"+" "+"click"+idx
                     clickable.id = item.id;
                     clickable.alt = item.name;
+                    clickable.style.left = item.left+"%"
+                    clickable.style.top = item.top+"%"
                     container.appendChild(clickable);
                     clickable.addEventListener("mouseover", showData);
                 });

@@ -6,8 +6,8 @@ img{
 .clickable{
     position: absolute;
     border: 0.5px solid;
-    width: 35px;
-    height: 35px;
+    width: 3%;
+    height: 3%;
     border-radius: 50%;  
 }
 /* .click0{
