@@ -3,7 +3,6 @@ $(document).ready(() => {
     });
   function urlName(){
     let windowGieght = window.screen.width;
-    console.log(windowGieght);
     let  url = window.location.pathname;
     var regex = /\/(\w+)\.html$/;
     var match = url.match(regex);
@@ -17,26 +16,14 @@ $(document).ready(() => {
 
 function toggleFullScreen() {
     if (!document.fullscreenElement) {
-        // Request full screen
         if (document.documentElement.requestFullscreen) {
             document.documentElement.requestFullscreen();
-        } else if (document.documentElement.mozRequestFullScreen) { // Firefox
-            document.documentElement.mozRequestFullScreen();
-        } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
-            document.documentElement.webkitRequestFullscreen();
-        } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
-            document.documentElement.msRequestFullscreen();
-        }
+        } 
+       
     } else {
         // Exit full screen
         if (document.exitFullscreen) {
             document.exitFullscreen();
-        } else if (document.mozCancelFullScreen) { // Firefox
-            document.mozCancelFullScreen();
-        } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
-            document.webkitExitFullscreen();
-        } else if (document.msExitFullscreen) { // IE/Edge
-            document.msExitFullscreen();
         }
     }
 }
@@ -58,39 +45,6 @@ function toggleFullScreen() {
     });
   }
 var data;
-    
-// $(".container")
-//         .on('mousewheel', function(e){
-//             _wheel(e);
-//         })
-
-// function _wheel(e){
-//     // e.preventDefault()
-//     if(e.type !== 'mousewheel'){
-//         return false;
-//     }
-
-
-
-   
-//  let options = {
-//   'minZoom' : 0.85,
-// 	'maxZoom' : 4,
-//   'scrollZoom' : 0.15
-//  }
-
-// 	//prevent scroll
-// 	e.preventDefault();
-
-// 	//calculate mouse origin relative to this.element
-// 	var originX = e.pageX - $(event.target).offset().left;
-// 	var originY = e.pageY - $(event.target).offset().top;
-
-// 	//calculate zoom multiplier
-// 	var wheelDelta = e.wheelDelta ? e.wheelDelta : e.originalEvent.wheelDelta;
-// 	var zoom = this._currentzoom + ((wheelDelta < 0 ? -1 : 1) * options.scrollZoom);
-    // zoom(zoom, originX, originY);
-// }
 
     function closePop(){
       $(".popUp").remove();
@@ -110,8 +64,11 @@ var data;
         <span id="itemId">Id: ${item.id}</span>
         <span id="itemName">Name: ${item.name}</span>
         <span id="itemPrice">price: ₹${item.price}</span>
-        <button>add to cart</button>`);
-          // console.log($(event.target).offSet());
+        <button id="addToCart">add to cart</button>`);
+        if(!item.availability){
+          newDiv.append(`<span id="notAvailable">item not available</span>`);
+          $('#addToCart').attr("disabled", true);
+        }
           let height = rect.height;
           let width = rect.width;
           let top=offset.top
@@ -120,7 +77,6 @@ var data;
             left = left - left/3;
           }
           if(top>(window.screen.height/2)){
-
               if (left<(window.screen.width/2)){
                left=left+width
                top= (top+height) - (top/4);
@@ -129,38 +85,21 @@ var data;
                left=left-width
                top= (top+height) - (top/4);
              }
-
-
           }
         newDiv.css({
           'padding': '10px',
           'border': '1px solid black',
-          // 'width':'20px',
           'top':top+height+'px',
           'left':left+width+'px'
         });
-
         // Append the new <div> to the body element
         $('body').append(newDiv);
-
         $(".close").click(closePop)
- 
 
     }
     function hotSpot(data){
       data.forEach(item => {
-        console.log(item)
         $(".hotspots").append(`</div><div class="hotspot" type="hotspot" reference=${item.reference} style="left: ${item.left}%; top:${item.top}%;">`)
-        // let clickable = document.createElement("div");
-        //   clickable.addClass("hotspot");
-        //   clickable.attr("reference",item.reference);
-        //   clickable.attr("id",item.id);
-        //   clickable.attr("alt",item.name);
-        //   clickable.css({
-        //     'top':item.top+'px',
-        //     'left':item.left+'px'
-        //   });
-        //   container.appendChild(clickable);
       });
         $(".hotspots").click((event) => {
             $(".hotspot").removeClass("active");
@@ -184,7 +123,6 @@ $.ajax({
   success: (response) => {
     data = response.data;
     if (data !== undefined) {
-      // Continue with the logic here
      hotSpot(data);
      zoomable();
     }

@@ -7,118 +7,226 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
     <script src="jquery.ui.touch-punch.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
+
+      <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.4.1/backbone.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/tesseract.js"></script> -->
-    <script src="./js/RoadMapDynamic.js"></script>
+    <!-- <script src="./js/RoadMapDynamic.js"></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="./css/roadMapDynamic.css">
 
     <title>RoadMap Dynamic</title>
 </head>
 <body>
-  <div class="image ui-draggable">
-      <button id="toggleFullScreen"><i class="fas fa-expand"></i></button>
-        <div class="container">
-        <img id="mainImage" src="./assets/images/RoadmapMain.png" alt="RoadMap Main">
-        <div id="hotspots-element" class="hotspots ui-draggable-handle">
-            
-          <!-- <div class="hotspot" type="hotspot" reference="11" style="left: 26.878787878788%; top: 4.1133062173155%;">
-            </div><div class="hotspot" type="hotspot" reference="12" style="left: 26.575757575758%; top:9.623881464265%;">
-            </div><div class="hotspot" type="hotspot" reference="4" style="left: 13.363636363636%; top: 16.587100522952%;">
-            </div><div class="hotspot" type="hotspot" reference="13" style="left: 50.439393939394%; top: 22.439570017432%;">
-            </div><div class="hotspot" type="hotspot" reference="14" style="left: 52.636363636364%; top: 29.454154561302%;">
-            </div><div class="hotspot" type="hotspot" reference="15" style="left: 51.121212121212%; top: 33.05671121441%;">
-            </div><div class="hotspot" type="hotspot" reference="18" style="left: 57.409090909091%; top: 41.0753050552%;">
-            </div><div class="hotspot" type="hotspot" reference="5" style="left: 27.409090909091%; top: 46.304822777455%;">
-            </div><div class="hotspot" type="hotspot" reference="3" style="left: 13.469696969697%; top: 46.537245787333%;">
-            </div><div class="hotspot" type="hotspot" reference="2" style="left: 13.166666666667%; top: 38.651074956421%;">
-            </div><div class="hotspot" type="hotspot" reference="1" style="left: 13.621212121212%; top: 34.27693201627%;">
-            </div><div class="hotspot" type="hotspot" reference="8" style="left: 17.739393939394%; top: 57.344915746659%;">
-            </div><div class="hotspot" type="hotspot" reference="7" style="left: 27.636363636364%; top: 56.415223707147%;">
-            </div><div class="hotspot" type="hotspot" reference="9" style="left: 28.242424242424%; top: 60.075886112725%;">
-            </div><div class="hotspot" type="hotspot" reference="28" style="left: 11.275757575758%; top: 76.013073794306%;">
-            </div><div class="hotspot" type="hotspot" reference="19" style="left: 57.560606060606%; top: 50.330331202789%;">
-            </div><div class="hotspot" type="hotspot" reference="20" style="left: 57.339393939394%; top: 53.926147588611%;">
-            </div><div class="hotspot" type="hotspot" reference="21" style="left: 57.387878787879%; top: 58.565136548518%;">
-            </div><div class="hotspot" type="hotspot" reference="22" style="left: 56.045454545455%; top: 64.433817547937%;">
-            </div><div class="hotspot" type="hotspot" reference="23" style="left: 57.512121212121%; top: 67.662056943637%;">
-            </div><div class="hotspot" type="hotspot" reference="24" style="left: 56.045454545455%; top: 71.380825101685%;">
-            </div><div class="hotspot" type="hotspot" reference="25" style="left: 56.045454545455%; top: 74.676641487507%;">
-            </div><div class="hotspot" type="hotspot" reference="26" style="left: 57.590909090909%; top: 80.471005229518%;">
-            </div><div class="hotspot" type="hotspot" reference="27" style="left: 58.90303030303%; top: 85.251888436955%;">
-            </div><div class="hotspot" type="hotspot" reference="29" style="left: 9.909090909091%; top: 94.581231841952%;"> -->
-            </div>
-        </div>
+  <div class="image ui-draggable"></div>
+  <script type="text/javascript" id="specialProduct">
+   <div>
+    <button id="toggleFullScreen"><i class="fas fa-expand"></i></button>
+      <div class="container">
+      <img id="mainImage" src="./assets/images/RoadmapMain.png" alt="RoadMap Main"/>
+      <div id="hotspots-element" class="hotspots ui-draggable-handle">
+      </div>
+      </div>
     </div>
-</div>
+    
+  </script>
+<script>
+  $(document).ready(() => {
 
-        <!-- <script>
-       function findNumbersCoordinates(text) {
-  var numbers = [];
-  if (!text) {
-    return numbers; // Return empty array if text is undefined or empty
-  }
+    var modelExample = Backbone.Model.extend({
+				   // URL or file path of the JSON data
+			url: './assets/RoadMapDynamic.json',
+			parse: function (data) {
+            var rows = [];
+            if(!_.isEmpty(data)) {
+                    rows.push(data.data);
+                }
+            return {
+                rows: rows
+            }
+            }
+          
+              });
 
-  var lines = text.split("\n");
+      var View = Backbone.View.extend({
+        el:".ui-draggable",
+        template:_.template($('#specialProduct').html()),
+        events:{
+          "click #toggleFullScreen":"toggleFullScreen"
+        },
+        initialize:function(){
+          this.model = new modelExample();
+          this.render();
+        },
+        render: async function() {
+					var params = {};
+					var jsonData = [];
 
-  for (var i = 0; i < lines.length; i++) {
-    var line = lines[i];
-    var lineNumbers = line.trim().split(" ");
+					try {
+						var resp = await this.model.fetch({
+						cache: false,
+						data: params
+						});
 
-    for (var j = 0; j < lineNumbers.length; j++) {
-      var number = lineNumbers[j];
-      var coordinate = {
-        number: number,
-        x: calculateXCoordinate(line, number),
-        y: calculateYCoordinate(i)
-      };
+						jsonData = resp.data;
+						// console.log(jsonData);
 
-      numbers.push(coordinate);
+						if (jsonData.length !== 0) {
+						this.model.set(jsonData);
+						this.$el.html(this.template());
+						console.log(this.model.toJSON());
+            this.hotSpot(jsonData)
+						}
+					} catch (error) {
+						console.log('Error:', error);
+					}
+        },
+        toggleFullScreen :function() {
+          if (!document.fullscreenElement) {
+              if (document.documentElement.requestFullscreen) {
+                  document.documentElement.requestFullscreen();
+              } 
+            
+          } else {
+              // Exit full screen
+              if (document.exitFullscreen) {
+                  document.exitFullscreen();
+              }
+          }
+        },
+
+        hotSpot:function(data){
+      data.forEach(item => {
+        $(".hotspots").append(`</div><div class="hotspot" type="hotspot" reference=${item.reference} style="left: ${item.left}%; top:${item.top}%;">`)
+      });
+        $(".hotspots").on("click",function(event){
+            $(".hotspot").removeClass("active");
+            let targetDiv = event.target
+        var ref = targetDiv.getAttribute("reference");
+            $(targetDiv).addClass("active")
+        
+         var item = data.find((i) => i.reference === ref);
+        var offset = $(event.target).offset();
+        var rect = (event.target).getBoundingClientRect();
+        popUp(item,offset,rect)
+  
+      });
     }
-  }
 
-  return numbers;
-}
+      })       
 
-        function calculateXCoordinate(line, number) {
-        // Calculate the X-coordinate of the number based on the position within the line
-        // You may need to implement a custom logic based on your specific image format
-        // This is just a basic example assuming equal spacing between numbers
-        var lineNumbers = line.trim().split(" ");
-        var index = lineNumbers.indexOf(number);
-        var spacing = 20; // Assuming 20 pixels spacing between numbers
-        var x = index * spacing;
-
-        return x;
-        }
-
-        function calculateYCoordinate(lineIndex) {
-        // Calculate the Y-coordinate of the number based on the line index
-        // You may need to implement a custom logic based on your specific image format
-        // This is just a basic example assuming equal spacing between lines
-        var spacing = 30; // Assuming 30 pixels spacing between lines
-        var y = lineIndex * spacing;
-
-        return y;
-        }
-
-// Assuming you have an <img> element with id "myImage" containing the image
-    var imageElement = document.querySelector("img");
-
-// Load the image using Tesseract.js
-    Tesseract.recognize(imageElement)
-    .then(function(result) {
-        // Access the recognized text
-        var text = result.data.text;
-        console.log("Recognized Text: ", text);
-
-        // Process the recognized text to find number coordinates
-        var numbers = findNumbersCoordinates(text);
-        console.log("Number Coordinates: ", numbers);
-    })
-    .catch(function(error) {
-        console.error("Error:", error);
+      var View1 = new View(); 
+    $(".container").draggable({
     });
 
-    </script> -->
+  // function urlName(){
+  //   let windowGieght = window.screen.width;
+  //   let  url = window.location.pathname;
+  //   var regex = /\/(\w+)\.html$/;
+  //   var match = url.match(regex);
+  //   var cleanedUrl = match[1];
+  //   return cleanedUrl;
+  // }
+
+  $("#toggleFullScreen").click(function() {
+    toggleFullScreen();
+});
+
+
+
+  function zoomable(){
+    $('.container').on('mousewheel', function(event) {
+        event.preventDefault();
+        const zoomSpeed = 0.05; // Adjust the zoom speed as needed
+        const minZoom = 0.75; // Minimum zoom level
+        const maxZoom = 1.5; // Maximum zoom level
+    
+        const delta = event.originalEvent.wheelDelta;
+        let zoom = parseFloat($(this).css('transform').split(' ')[3]) || 1;
+    
+        zoom += delta > 0 ? zoomSpeed : -zoomSpeed;
+        zoom = Math.min(Math.max(minZoom, zoom), maxZoom);
+    
+        $(this).css('transform', `scale(${zoom})`);
+    });
+  }
+var data;
+
+    function closePop(){
+      $(".popUp").remove();
+      $(".hotspot").removeClass("active");
+    }
+   
+    function popUp(item,offset,rect){
+
+       if($(".popUp")){
+        $(".popUp").remove()
+       }
+        var newDiv = $('<div class="popUp">');
+        // Add some content to the new <div>
+        newDiv.append(`<span class="close">X</span>
+        <span id='ref'>${item.reference}</span>
+        <img src=${item.image} alt=${item.name}>
+        <span id="itemId">Id: ${item.id}</span>
+        <span id="itemName">Name: ${item.name}</span>
+        <span id="itemPrice">price: ₹${item.price}</span>
+        <button id="addToCart">add to cart</button>`);
+        if(!item.availability){
+          newDiv.append(`<span id="notAvailable">item not available</span>`);
+          $('#addToCart').attr("disabled", true);
+        }
+          let height = rect.height;
+          let width = rect.width;
+          let top=offset.top
+          let left = offset.left
+          if(left>550){
+            left = left - left/3;
+          }
+          if(top>(window.screen.height/2)){
+              if (left<(window.screen.width/2)){
+               left=left+width
+               top= (top+height) - (top/4);
+             }
+              if (left>(window.screen.width/2)){
+               left=left-width
+               top= (top+height) - (top/4);
+             }
+          }
+        newDiv.css({
+          'padding': '10px',
+          'border': '1px solid black',
+          'top':top+height+'px',
+          'left':left+width+'px'
+        });
+        // Append the new <div> to the body element
+        $('body').append(newDiv);
+        $(".close").click(closePop)
+
+    }
+    
+try {
+
+
+$.ajax({
+  url: `./assets/${urlName()}.json`,
+  type: "GET",
+  success: (response) => {
+    data = response.data;
+    if (data !== undefined) {
+     hotSpot(data);
+     zoomable();
+    }
+  },
+  error: (error) => {
+    console.error("Error loading JSON:", error);
+  }
+});
+} catch (error) {
+console.error("An error occurred:", error);
+}
+});
+</script>
 </body>
 </html>

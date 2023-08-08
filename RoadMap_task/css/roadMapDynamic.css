@@ -108,6 +108,13 @@ span.close:hover{
     bottom: 5%;
     float: inherit;
 }
+
+.popUp>#notAvailable{
+    position: fixed;
+    top: 1%;
+    
+    color: red;
+}
 span{
     top: 0%;
 }
